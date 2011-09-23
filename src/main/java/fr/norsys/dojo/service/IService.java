@@ -24,13 +24,13 @@ public interface IService {
 	public void removeUtilisateur(int rowIndex);
 
 	public int getRowCount();
-
+	// liste de  tous les utilisateur
 	public List<Utilisateur> findAllUtilisateurs() throws SQLException;
-
+	// recuper un utilisateur par son id
 	public Utilisateur utilisateurById(Long idUtilisateur) throws SQLException;
-
+	// modification d'un utilisateur
 	public void updateUtilisateur(Utilisateur utilisateur) throws SQLException;
-
+	// suppression d'un utilisateur
 	public void deleteUtilisateur(Long idUtilisateur) throws SQLException;
 
 	public Object getValueAt(int i, int j);

@@ -31,7 +31,6 @@ public class Ihmjeux extends JFrame implements ActionListener {
 	JButton rejoue = null;
 	JButton submit = null;
 	JButton efface = null;
-	
 
 	ImageIcon imgVERT = new ImageIcon("images/vert.gif");
 	ImageIcon imgBLEU = new ImageIcon("images/bleu.gif");
@@ -40,7 +39,7 @@ public class Ihmjeux extends JFrame implements ActionListener {
 	JLabel labelVERT = new JLabel(imgVERT);
 	JLabel labelBLEU = new JLabel(imgBLEU);
 	JLabel labelROUGE = new JLabel(imgROUGE);
-	
+
 	JLabel[] cases;
 	JLabel label1 = null;
 	JLabel label2 = null;
@@ -63,24 +62,27 @@ public class Ihmjeux extends JFrame implements ActionListener {
 		setTitle("Gestion des Utilisateur");
 		taille(500, 500);
 
-		tableau = new JTable(10,3);
-		//jPanelChemp.setLayout(new GridLayout(10,7));
+		tableau = new JTable(10, 3);
+		// jPanelChemp.setLayout(new GridLayout(10,7));
 		cases = new JLabel[2];
-		//jPanelChemp.add(cases);
-		/*JScrollPane js = new JScrollPane(tableau);*/
-		jPanelDesPanel = new JPanel(new GridLayout(10,6));
-		for(int i = 0 ; i < 6 ; i++){
-			JPanel panel = new JPanel();
-			jPanelDesPanel.add(panel);
+		// jPanelChemp.add(cases);
+		/* JScrollPane js = new JScrollPane(tableau); */
+		jPanelDesPanel = new JPanel(new GridLayout(10, 6));
+		for (int i = 0; i < 30; i++) {
+			JLabel etiquette = new JLabel(imgVERT);
+			etiquette.setHorizontalTextPosition(JLabel.CENTER);
+			etiquette.setVerticalTextPosition(JLabel.BOTTOM);
+			//étiquette.setToolTipText(aide(fichier));
+			jPanelDesPanel.add(etiquette);
 		}
-		
-		jPanelContaint.add(jPanelDesPanel);
-		
+
+		jPanelContaint.add(jPanelDesPanel,BorderLayout.CENTER);
+
 		jPanelContaint.add(jPanelChemp, BorderLayout.CENTER);
 
 		jPanel = new JPanel();
 		jPanelBoule = new JPanel();
-		
+
 		// les button que l_utilisateur utilise
 		rejoue = new JButton("Rejoue");
 		rejoue.addActionListener(this);
@@ -92,36 +94,36 @@ public class Ihmjeux extends JFrame implements ActionListener {
 		submit = new JButton("Submit");
 		submit.addActionListener(this);
 		jPanel.add(submit);
-		
-		//JLabel label = new JLabel(imgAjouter); // probably an ImageIcon
+
+		// JLabel label = new JLabel(imgAjouter); // probably an ImageIcon
 
 		label1 = new JLabel();
 		label2 = new JLabel();
 		label3 = new JLabel();
-		
-		// image vert 
-		labelVERT.addMouseListener(new MouseAdapter(){
 
-			   public void mouseClicked(MouseEvent e) {
-			     System.out.println("image vert");
-			   }
-			});
+		// image vert
+		labelVERT.addMouseListener(new MouseAdapter() {
+
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("image vert");
+			}
+		});
 		// image bleu
-		labelBLEU.addMouseListener(new MouseAdapter(){
+		labelBLEU.addMouseListener(new MouseAdapter() {
 
-			   public void mouseClicked(MouseEvent e) {
-			     System.out.println("image bleu");
-			   }
-			});
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("image bleu");
+			}
+		});
 		// image rouge
-		labelROUGE.addMouseListener(new MouseAdapter(){
+		labelROUGE.addMouseListener(new MouseAdapter() {
 
-			   public void mouseClicked(MouseEvent e) {
-			     System.out.println("image rouge");
-			   }
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("image rouge");
+			}
 
-			});
-		
+		});
+
 		jPanelBoule.add(labelVERT);
 		jPanelBoule.add(labelBLEU);
 		jPanelBoule.add(labelROUGE);
@@ -130,8 +132,6 @@ public class Ihmjeux extends JFrame implements ActionListener {
 		getContentPane().add(jPanelContaint);
 	}
 
-	
-	
 	Long idUtilisateur = null;
 	Long idAdresse = null;
 
@@ -141,15 +141,11 @@ public class Ihmjeux extends JFrame implements ActionListener {
 
 		if (s == rejoue) {
 			System.out.println(" rejoue ");
-			//ajoutUtilisateru("Ajout", (long) 0);
-			cases[0].setIcon(imgVERT);
 		} else if (s == efface) {
 			System.out.println(" efface ");
-			cases[1].setIcon(imgVERT);
 		} else if (s == submit) {
-				System.out.println(" submit ");
-				cases[2].setIcon(imgVERT);
-		} 
+			System.out.println(" submit ");
+		}
 	}
 
 	// methode permet d'affiche l'interface au milieu de l'ecran

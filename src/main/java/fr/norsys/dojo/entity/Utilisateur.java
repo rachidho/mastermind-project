@@ -4,6 +4,11 @@ import fr.norsys.dojo.annotation.ClePrimaire;
 import fr.norsys.dojo.annotation.Colonne;
 import fr.norsys.dojo.annotation.NomTable;
 
+/**
+ * @author technomaker01
+ *
+ *				netity utilisé pour stocke les utilisateur qui peuve jouer a ce jeux
+ */
 @NomTable( name = "Utilisateur")
 public class Utilisateur {
 
@@ -14,9 +19,11 @@ public class Utilisateur {
 	@Colonne(name = "preUtilisateur")
 	private String preUtilisateur;
 
+	// constructeur vide
 	public Utilisateur() {
 	}
 	
+	// constructeur initialisé
 	public Utilisateur(Long inUtilisateur, String nomUtilisateur,
 			String preUtilisateur) {
 		this.inUtilisateur = inUtilisateur;
@@ -24,6 +31,7 @@ public class Utilisateur {
 		this.preUtilisateur = preUtilisateur;
 	}
 
+	// les getters et les setters
 	public Long getInUtilisateur() {
 		return inUtilisateur;
 	}

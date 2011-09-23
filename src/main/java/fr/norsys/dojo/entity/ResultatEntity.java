@@ -5,7 +5,8 @@ import fr.norsys.dojo.annotation.NomTable;
 
 /**
  * @author technomaker01
- *
+ *	
+ *			entity utilisé pour stocké les resulta d'un utilisateur identifier
  */
 @NomTable( name = "ResultatEntity")
 public class ResultatEntity {
@@ -19,7 +20,7 @@ public class ResultatEntity {
 	@ClePrimaire( name ="perdus")
 	private int perdus;
 	
-	
+	// constructeur initialisé
 	public ResultatEntity(Long i, Long j, int gagnees, int perdus) {
 		super();
 		this.idResulte = i;
@@ -27,9 +28,13 @@ public class ResultatEntity {
 		this.gagnees = gagnees;
 		this.perdus = perdus;
 	}
+	
+	// constructeur vide
 	public ResultatEntity() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	// les getter et les setters
 	public Long getIdResulte() {
 		return idResulte;
 	}

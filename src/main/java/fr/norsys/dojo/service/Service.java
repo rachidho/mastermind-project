@@ -165,7 +165,7 @@ public class Service extends AbstractTableModel implements IService {
 			return null;
 		}
 	}
-
+	
 	public void addUtilisateur(Utilisateur utilisateur) {
 		users.add(utilisateur);
 		fireTableRowsInserted(users.size() - 1, users.size() - 1);

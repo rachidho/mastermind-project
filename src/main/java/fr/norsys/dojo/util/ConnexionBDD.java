@@ -11,6 +11,7 @@ public class ConnexionBDD {
 
 	static JDBCDataSource dataSource;
 	
+	// methode contient le parametre de la base de donne
 	private static DataSource getApplicationDataSource(){
 		try {
 			Class.forName("org.hsqldb.jdbcDriver");
