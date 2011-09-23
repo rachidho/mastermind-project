@@ -1,10 +1,29 @@
 package fr.norsys.dojo.mastermind;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 
 import org.junit.Test;
 
+import fr.norsys.dojo.DAO.DaoResultat;
+import fr.norsys.dojo.DAO.interfaceDAO.IDaoResultat;
+import fr.norsys.dojo.entity.ResultatEntity;
+import fr.norsys.dojo.util.ConnexionBDD;
+
 public class MastermindTest {
+	Connection conn = null;
+
+	// methode permet de faire la connexion a la base de donnee
+	private void connexion() {
+		try {
+			conn = ConnexionBDD.getConnectionTOBACKOFFICE();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 	@Test
 	public void shouldAvoirSolution() {
@@ -22,47 +41,72 @@ public class MastermindTest {
 				Couleur.ROUGE, Couleur.BLEU });
 
 	}
-	
+
 	@Test
-	public void shouldVerifyOneGood(){
+	public void shouldVerifyOneGood() {
 		MasterMind masterMind = verifySetGetCouleur(Couleur.ROUGE);
-		//1 de bien placé
-		assertEquals(1,masterMind.setProposition(Couleur.ROUGE).getNbGood());
-		
+		// 1 de bien placé
+		assertEquals(1, masterMind.setProposition(Couleur.ROUGE).getNbGood());
+
 	}
-	
+
 	@Test
-	public void shouldVerifyTwoGood(){
-		MasterMind masterMind = verifySetGetCouleur(Couleur.ROUGE,Couleur.ROUGE);
-		//2 de bien placé
-		assertEquals(2,masterMind.setProposition(Couleur.ROUGE,Couleur.ROUGE).getNbGood());
-		
+	public void shouldVerifyTwoGood() {
+		MasterMind masterMind = verifySetGetCouleur(Couleur.ROUGE,
+				Couleur.ROUGE);
+		// 2 de bien placé
+		assertEquals(2, masterMind.setProposition(Couleur.ROUGE, Couleur.ROUGE)
+				.getNbGood());
+
 	}
-	
+
 	@Test
-	public void shouldVerifyOneFalsePosition(){
-		MasterMind masterMind = verifySetGetCouleur(Couleur.VERT,Couleur.BLEU);
-		Resultat resultat = masterMind.setProposition(Couleur.BLEU,Couleur.ROUGE);
-		//2 de bien placé
-		assertEquals(1,resultat.getNbMalPace());
-		
+	public void shouldVerifyOneFalsePosition() {
+		MasterMind masterMind = verifySetGetCouleur(Couleur.VERT, Couleur.BLEU);
+		Resultat resultat = masterMind.setProposition(Couleur.BLEU,
+				Couleur.ROUGE);
+		// 2 de bien placé
+		assertEquals(1, resultat.getNbMalPace());
+
 	}
-	
+
 	@Test
-	public void shouldAcceptDifferentSize(){
-		
+	public void shouldAcceptDifferentSize() {
+
 		MasterMind masterMind = verifySetGetCouleur(Couleur.ROUGE);
-		//2 de bien placé
-		assertEquals(1,masterMind.setProposition(Couleur.ROUGE,Couleur.ROUGE).getNbGood());
-		
+		// 2 de bien placé
+		assertEquals(1, masterMind.setProposition(Couleur.ROUGE, Couleur.ROUGE)
+				.getNbGood());
+
 	}
-	
+
 	@Test
-	public void shouldVerifyZeroGood(){
+	public void shouldVerifyZeroGood() {
 		MasterMind masterMind = verifySetGetCouleur(Couleur.BLEU);
-		//0 de bien placé
-		assertEquals(0,masterMind.setProposition(Couleur.ROUGE).getNbGood());
+		// 0 de bien placé
+		assertEquals(0, masterMind.setProposition(Couleur.ROUGE).getNbGood());
+	}
+
+	// methode permet de faire le test sur l'insertion, modification et suppresion
+	@Test
+	public void shouldCRUDResultat() throws SQLException {
+		connexion();
+		IDaoResultat iDaoResultat = new DaoResultat(conn);
+		ResultatEntity resultatEntity = new ResultatEntity();
+		resultatEntity.setIdResulte((long) 1);
+		resultatEntity.setIdUtilisateur((long) 1);
+		resultatEntity.setGagnees(1);
+		resultatEntity.setPerdus(3);
 		
+		// ajout du resultat
+		assertTrue(1 == iDaoResultat.ajoutResultat(resultatEntity));
+		// modification
+		resultatEntity.setGagnees(1);
+		assertTrue(1 == iDaoResultat.updateResultat(resultatEntity));
+		// supression
+		assertTrue(1 == iDaoResultat.deleteResultat((long) 1));
+		
+		conn.close();
 	}
 
 	private MasterMind verifySetGetCouleur(Couleur... solution) {

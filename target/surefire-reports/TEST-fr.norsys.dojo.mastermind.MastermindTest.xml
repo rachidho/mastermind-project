@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.125" errors="0" skipped="0" tests="7" name="fr.norsys.dojo.mastermind.MastermindTest">
+<testsuite failures="0" time="1.008" errors="0" skipped="0" tests="8" name="fr.norsys.dojo.mastermind.MastermindTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="c:\Program Files\Java\jdk1.6.0_27\jre\bin"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_27\jre\bin"/>
     <property name="java.vm.version" value="20.2-b06"/>
     <property name="java.vm.vendor" value="Sun Microsystems Inc."/>
     <property name="java.vendor.url" value="http://java.sun.com/"/>
@@ -11,60 +11,61 @@
     <property name="file.encoding.pkg" value="sun.io"/>
     <property name="user.country" value="FR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.os.patch.level" value="Service Pack 2"/>
+    <property name="sun.os.patch.level" value="Service Pack 3"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="f:\rachid_info\git\mastermind-project"/>
+    <property name="user.dir" value="D:\outils_de_travail\springsource\workspace-sts\mastermind-project"/>
     <property name="java.runtime.version" value="1.6.0_27-b07"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="basedir" value="f:\rachid_info\git\mastermind-project"/>
-    <property name="java.endorsed.dirs" value="c:\Program Files\Java\jdk1.6.0_27\jre\lib\endorsed"/>
+    <property name="basedir" value="D:\outils_de_travail\springsource\workspace-sts\mastermind-project"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_27\jre\lib\endorsed"/>
     <property name="os.arch" value="x86"/>
-    <property name="surefire.real.class.path" value="f:\rachid_info\git\mastermind-project\target\surefire\surefirebooter2516109068383828661.jar"/>
-    <property name="java.io.tmpdir" value="C:\DOCUME~1\radwane\LOCALS~1\Temp\"/>
+    <property name="surefire.real.class.path" value="D:\outils_de_travail\springsource\workspace-sts\mastermind-project\target\surefire\surefirebooter2435696020180552884.jar"/>
+    <property name="java.io.tmpdir" value="C:\DOCUME~1\TECHNO~1\LOCALS~1\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows XP"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="c:\Program Files\Java\jdk1.6.0_27\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\Documents and Settings\radwane\bin;.;C:\Program Files\Git\local\bin;C:\Program Files\Git\mingw\bin;C:\Program Files\Git\bin;c:\WINDOWS\system32;c:\WINDOWS;c:\WINDOWS\System32\Wbem;f:\rachid_info\maven\apache-maven-3.0.3\bin;c:\Program Files\Java\jdk1.6.0_27\bin;."/>
-    <property name="surefire.test.class.path" value="f:\rachid_info\git\mastermind-project\target\test-classes;f:\rachid_info\git\mastermind-project\target\classes;C:\Documents and Settings\radwane\.m2\repository\junit\junit\4.8\junit-4.8.jar;"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.6.0_27\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Java\jdk1.6.0_27\bin;C:\Program Files\Git\bin;C:\WINDOWS\notepad.exe;D:\outils_de_travail\Ant\apache-ant-1.8.2\bin;D:\outils_de_travail\maven\apache-maven-3.0.3\bin;C:\Program Files\MySQL\MySQL Server 5.5\bin;."/>
+    <property name="surefire.test.class.path" value="D:\outils_de_travail\springsource\workspace-sts\mastermind-project\target\test-classes;D:\outils_de_travail\springsource\workspace-sts\mastermind-project\target\classes;C:\Documents and Settings\technomaker01\.m2\repository\junit\junit\4.8\junit-4.8.jar;C:\Documents and Settings\technomaker01\.m2\repository\org\hsqldb\hsqldb\2.2.4\hsqldb-2.2.4.jar;C:\Documents and Settings\technomaker01\.m2\repository\org\apache\derby\derby\10.8.1.2\derby-10.8.1.2.jar;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="50.0"/>
     <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
     <property name="os.version" value="5.1"/>
-    <property name="user.home" value="C:\Documents and Settings\radwane"/>
-    <property name="user.timezone" value=""/>
+    <property name="user.home" value="C:\Documents and Settings\technomaker01"/>
+    <property name="user.timezone" value="GMT"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.6"/>
     <property name="file.encoding" value="Cp1252"/>
-    <property name="user.name" value="radwane"/>
-    <property name="java.class.path" value="f:\rachid_info\git\mastermind-project\target\test-classes;f:\rachid_info\git\mastermind-project\target\classes;C:\Documents and Settings\radwane\.m2\repository\junit\junit\4.8\junit-4.8.jar;"/>
+    <property name="user.name" value="technomaker01"/>
+    <property name="java.class.path" value="D:\outils_de_travail\springsource\workspace-sts\mastermind-project\target\test-classes;D:\outils_de_travail\springsource\workspace-sts\mastermind-project\target\classes;C:\Documents and Settings\technomaker01\.m2\repository\junit\junit\4.8\junit-4.8.jar;C:\Documents and Settings\technomaker01\.m2\repository\org\hsqldb\hsqldb\2.2.4\hsqldb-2.2.4.jar;C:\Documents and Settings\technomaker01\.m2\repository\org\apache\derby\derby\10.8.1.2\derby-10.8.1.2.jar;"/>
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="32"/>
-    <property name="java.home" value="c:\Program Files\Java\jdk1.6.0_27\jre"/>
-    <property name="sun.java.command" value="f:\rachid_info\git\mastermind-project\target\surefire\surefirebooter2516109068383828661.jar f:\rachid_info\git\mastermind-project\target\surefire\surefire4819452754097191695tmp f:\rachid_info\git\mastermind-project\target\surefire\surefire554361375704830893tmp"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.6.0_27\jre"/>
+    <property name="sun.java.command" value="D:\outils_de_travail\springsource\workspace-sts\mastermind-project\target\surefire\surefirebooter2435696020180552884.jar D:\outils_de_travail\springsource\workspace-sts\mastermind-project\target\surefire\surefire7906156927764167564tmp D:\outils_de_travail\springsource\workspace-sts\mastermind-project\target\surefire\surefire6242738660974612727tmp"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="fr"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.version" value="1.6.0_27"/>
-    <property name="java.ext.dirs" value="c:\Program Files\Java\jdk1.6.0_27\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="c:\Program Files\Java\jdk1.6.0_27\jre\lib\resources.jar;c:\Program Files\Java\jdk1.6.0_27\jre\lib\rt.jar;c:\Program Files\Java\jdk1.6.0_27\jre\lib\sunrsasign.jar;c:\Program Files\Java\jdk1.6.0_27\jre\lib\jsse.jar;c:\Program Files\Java\jdk1.6.0_27\jre\lib\jce.jar;c:\Program Files\Java\jdk1.6.0_27\jre\lib\charsets.jar;c:\Program Files\Java\jdk1.6.0_27\jre\lib\modules\jdk.boot.jar;c:\Program Files\Java\jdk1.6.0_27\jre\classes"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.6.0_27\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.6.0_27\jre\lib\resources.jar;C:\Program Files\Java\jdk1.6.0_27\jre\lib\rt.jar;C:\Program Files\Java\jdk1.6.0_27\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.6.0_27\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.6.0_27\jre\lib\jce.jar;C:\Program Files\Java\jdk1.6.0_27\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.6.0_27\jre\lib\modules\jdk.boot.jar;C:\Program Files\Java\jdk1.6.0_27\jre\classes"/>
     <property name="java.vendor" value="Sun Microsystems Inc."/>
-    <property name="localRepository" value="C:\Documents and Settings\radwane\.m2\repository"/>
+    <property name="localRepository" value="C:\Documents and Settings\technomaker01\.m2\repository"/>
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.desktop" value="windows"/>
-    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
+    <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldAvoirSolution"/>
+  <testcase time="0.015" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldAvoirSolution"/>
   <testcase time="0" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldSaveSolution"/>
   <testcase time="0" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldVerifyOneGood"/>
   <testcase time="0" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldVerifyTwoGood"/>
   <testcase time="0" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldVerifyOneFalsePosition"/>
-  <testcase time="0.015" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldAcceptDifferentSize"/>
+  <testcase time="0" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldAcceptDifferentSize"/>
   <testcase time="0" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldVerifyZeroGood"/>
+  <testcase time="0.931" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldCRUDResultat"/>
 </testsuite>

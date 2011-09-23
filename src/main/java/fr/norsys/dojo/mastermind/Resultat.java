@@ -5,6 +5,7 @@ public class Resultat {
 	private int nbGood;
 	private int nbMalPlace;
 
+
 	public void setNbGood(int nbGood) {
 		this.nbGood = nbGood;
 	}
