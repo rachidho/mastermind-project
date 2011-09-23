@@ -6,7 +6,6 @@ import java.util.List;
 import fr.norsys.dojo.entity.Utilisateur;
 
 public interface IDaoUtilisateur {
-	
 	// ajoute des utilisateur 
 	public void ajoutUtilisateur(Utilisateur utilisateur) throws SQLException;
 	// liste de tous les utilisateur

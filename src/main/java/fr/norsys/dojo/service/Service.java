@@ -21,11 +21,8 @@ public class Service extends AbstractTableModel implements IService {
 	 * 
 	 */
 	private static final long serialVersionUID = 8003672297839912768L;
-
 	private List<Utilisateur> users = new ArrayList<Utilisateur>();
-
 	private final String[] entetes = { "ID", "Prénom", "Nom" };
-
 	Connection conn = null;
 
 	public Service() {
@@ -36,7 +33,6 @@ public class Service extends AbstractTableModel implements IService {
 			e.printStackTrace();
 		}
 	}
-
 	// methode permet de faire la connexion a la base de donnee
 	private void connexion() {
 		try {
@@ -45,7 +41,6 @@ public class Service extends AbstractTableModel implements IService {
 			e.printStackTrace();
 		}
 	}
-
 	// methode permet d'ajoute un utilisateur
 	public int ajoutResultat(ResultatEntity resultat) throws SQLException {
 		connexion();
@@ -54,7 +49,6 @@ public class Service extends AbstractTableModel implements IService {
 		conn.close();
 		return i;
 	}
-
 	// methode permet de modifier un utilisateur
 	public int updateResultat(ResultatEntity resultat) throws SQLException {
 		connexion();
@@ -63,7 +57,6 @@ public class Service extends AbstractTableModel implements IService {
 		conn.close();
 		return i;
 	}
-
 	// methode permet de supprimer un utilisateur
 	public int deleteResultat(Long idResultat) throws SQLException {
 		connexion();
@@ -72,7 +65,6 @@ public class Service extends AbstractTableModel implements IService {
 		conn.close();
 		return i;
 	}
-
 	// methode permet d'ajoute un utilisateur
 		public void ajoutUtilisateur(Utilisateur utilisateur) throws SQLException {
 			connexion();
@@ -82,8 +74,6 @@ public class Service extends AbstractTableModel implements IService {
 			fireTableRowsInserted(users.size() - 1, users.size() - 1);
 			conn.close();
 		}
-
-		
 	// methode permet de liste tout les utilisateur
 	public List<Utilisateur> findAllUtilisateurs() throws SQLException {
 		connexion();
@@ -98,7 +88,6 @@ public class Service extends AbstractTableModel implements IService {
 		}
 		return result;
 	}
-
 	// methode permet de recupere un utilisateur
 	public Utilisateur utilisateurById(Long idUtilisateur) throws SQLException {
 		connexion();
@@ -108,7 +97,6 @@ public class Service extends AbstractTableModel implements IService {
 		conn.close();
 		return utilisateur;
 	}
-
 	// methode permet de modifier un utilisateur
 	public void updateUtilisateur(Utilisateur utilisateur) throws SQLException {
 		connexion();
@@ -116,7 +104,6 @@ public class Service extends AbstractTableModel implements IService {
 		iDaoUtilisateur.updateUtilisateur(utilisateur);
 		conn.close();
 	}
-
 	// methode permet de supprimer un utilisateur
 	public void deleteUtilisateur(Long idUtilisateur) throws SQLException {
 		connexion();
@@ -124,7 +111,6 @@ public class Service extends AbstractTableModel implements IService {
 		iDaoUtilisateur.deleteUtilisateur(idUtilisateur);
 		conn.close();
 	}
-
 	// methode permet de genere l'ID suivant
 	public Long iDtable(String s) throws SQLException {
 		connexion();
@@ -139,11 +125,10 @@ public class Service extends AbstractTableModel implements IService {
 		conn.close();
 		return il;
 	}
-
 	public int getRowCount() {
 		return users.size();
 	}
-
+	
 	public int getColumnCount() {
 		return entetes.length;
 	}

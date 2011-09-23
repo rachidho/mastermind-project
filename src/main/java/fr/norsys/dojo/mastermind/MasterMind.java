@@ -1,19 +1,15 @@
 package fr.norsys.dojo.mastermind;
 
 public class MasterMind {
-
 	private Couleur[] couleurs;
-
 	// envoy des la solution a chaque debut de jeux
 	public void setSolution(Couleur... solution) {
 		couleurs = solution;
 	}
-
 	// recupere la solution
 	public Couleur[] getSolution() {
 		return couleurs;
 	}
-
 	// methode permet de comparais les choix proposer par l'utilisateur a selle
 	// qui est donne comme solution et retourn le resultat
 	public Resultat setProposition(Couleur... proposition) {
@@ -34,7 +30,6 @@ public class MasterMind {
 			i++;
 
 		}
-
 		resultat.setNbGood(nbGood);
 		resultat.setNbMalPlace(nbMalPlace);
 		return resultat;

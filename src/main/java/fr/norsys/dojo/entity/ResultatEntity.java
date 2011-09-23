@@ -10,7 +10,6 @@ import fr.norsys.dojo.annotation.NomTable;
  */
 @NomTable( name = "ResultatEntity")
 public class ResultatEntity {
-	
 	@ClePrimaire( name ="idResulte")
 	private Long idResulte;
 	@ClePrimaire( name ="idUtilisateur")
@@ -19,7 +18,6 @@ public class ResultatEntity {
 	private int gagnees;
 	@ClePrimaire( name ="perdus")
 	private int perdus;
-	
 	// constructeur initialisé
 	public ResultatEntity(Long i, Long j, int gagnees, int perdus) {
 		super();
@@ -28,12 +26,10 @@ public class ResultatEntity {
 		this.gagnees = gagnees;
 		this.perdus = perdus;
 	}
-	
 	// constructeur vide
 	public ResultatEntity() {
 		// TODO Auto-generated constructor stub
 	}
-	
 	// les getter et les setters
 	public Long getIdResulte() {
 		return idResulte;

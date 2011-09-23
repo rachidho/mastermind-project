@@ -26,7 +26,6 @@ public class ConnexionBDD {
 		}
 		return dataSource;
 	}
-	
 	// methode cree la connexion a la base
 	public static Connection getConnectionTOBACKOFFICE() throws SQLException {
 		DataSource ds = getApplicationDataSource();		

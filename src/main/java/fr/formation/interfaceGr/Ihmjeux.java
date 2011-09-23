@@ -18,10 +18,6 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 
 public class Ihmjeux extends JFrame implements ActionListener {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7694254543570004724L;
 	/*
 	 * private IService iService; private IServiceAdresse iServiceAdresse;
@@ -55,13 +51,11 @@ public class Ihmjeux extends JFrame implements ActionListener {
 		super();
 		initialize();
 	}
-
 	// permet d'affiche la permier fenetre
 	public void initialize() {
 		// titre de la fenetre et permission de le ferme
 		setTitle("Gestion des Utilisateur");
 		taille(500, 500);
-
 		tableau = new JTable(10, 3);
 		// jPanelChemp.setLayout(new GridLayout(10,7));
 		cases = new JLabel[2];
@@ -72,17 +66,12 @@ public class Ihmjeux extends JFrame implements ActionListener {
 			JLabel etiquette = new JLabel(imgVERT);
 			etiquette.setHorizontalTextPosition(JLabel.CENTER);
 			etiquette.setVerticalTextPosition(JLabel.BOTTOM);
-			//étiquette.setToolTipText(aide(fichier));
 			jPanelDesPanel.add(etiquette);
 		}
-
 		jPanelContaint.add(jPanelDesPanel,BorderLayout.CENTER);
-
 		jPanelContaint.add(jPanelChemp, BorderLayout.CENTER);
-
 		jPanel = new JPanel();
 		jPanelBoule = new JPanel();
-
 		// les button que l_utilisateur utilise
 		rejoue = new JButton("Rejoue");
 		rejoue.addActionListener(this);
@@ -94,13 +83,10 @@ public class Ihmjeux extends JFrame implements ActionListener {
 		submit = new JButton("Submit");
 		submit.addActionListener(this);
 		jPanel.add(submit);
-
 		// JLabel label = new JLabel(imgAjouter); // probably an ImageIcon
-
 		label1 = new JLabel();
 		label2 = new JLabel();
 		label3 = new JLabel();
-
 		// image vert
 		labelVERT.addMouseListener(new MouseAdapter() {
 
@@ -123,7 +109,6 @@ public class Ihmjeux extends JFrame implements ActionListener {
 			}
 
 		});
-
 		jPanelBoule.add(labelVERT);
 		jPanelBoule.add(labelBLEU);
 		jPanelBoule.add(labelROUGE);
@@ -131,14 +116,12 @@ public class Ihmjeux extends JFrame implements ActionListener {
 		jPanelContaint.add(jPanel, BorderLayout.NORTH);
 		getContentPane().add(jPanelContaint);
 	}
-
 	Long idUtilisateur = null;
 	Long idAdresse = null;
 
 	// methode permet de gere les action sur les Button
 	public void actionPerformed(ActionEvent e) {
 		Object s = e.getSource();
-
 		if (s == rejoue) {
 			System.out.println(" rejoue ");
 		} else if (s == efface) {
@@ -147,7 +130,6 @@ public class Ihmjeux extends JFrame implements ActionListener {
 			System.out.println(" submit ");
 		}
 	}
-
 	// methode permet d'affiche l'interface au milieu de l'ecran
 	public void taille(int Vwidth, int Vheight) {
 		int width = Vwidth;

@@ -17,7 +17,6 @@ import fr.norsys.dojo.util.ConnexionBDD;
 
 public class MastermindTest {
 	Connection conn = null;
-
 	// methode permet de faire la connexion a la base de donnee
 	private void connexion() {
 		try {
@@ -26,7 +25,6 @@ public class MastermindTest {
 			e.printStackTrace();
 		}
 	}
-
 	// methode permet de faire le test sur l'insertion, modification et
 	// suppresion a partir de DAO
 	// test de DAO
@@ -39,7 +37,6 @@ public class MastermindTest {
 		resultatEntity.setIdUtilisateur((long) 1);
 		resultatEntity.setGagnees(1);
 		resultatEntity.setPerdus(3);
-
 		// ajout du resultat
 		assertTrue(1 == iDaoResultat.ajoutResultat(resultatEntity));
 		// modification
@@ -47,10 +44,8 @@ public class MastermindTest {
 		assertTrue(1 == iDaoResultat.updateResultat(resultatEntity));
 		// supression
 		assertTrue(1 == iDaoResultat.deleteResultat((long) 1));
-
 		conn.close();
 	}
-
 	// methode permet de faire le test sur l'insertion, modification et
 	// suppresion a partir de service
 	// test de SERVICE
@@ -62,7 +57,6 @@ public class MastermindTest {
 		resultatEntity.setIdUtilisateur((long) 1);
 		resultatEntity.setGagnees(1);
 		resultatEntity.setPerdus(3);
-
 		// ajout du resultat
 		assertTrue(1 == iService.ajoutResultat(resultatEntity));
 		// modification
@@ -70,14 +64,12 @@ public class MastermindTest {
 		assertTrue(1 == iService.updateResultat(resultatEntity));
 		// supression
 		assertTrue(1 == iService.deleteResultat((long) 1));
-
 	}
-
+	
 	@Test
 	public void shouldAvoirSolution() {
 		verifySetGetCouleur(new Couleur[] { Couleur.ROUGE, Couleur.ROUGE,
 				Couleur.ROUGE, Couleur.ROUGE });
-
 	}
 
 	@Test
@@ -87,7 +79,6 @@ public class MastermindTest {
 				Couleur.ROUGE, Couleur.ROUGE });
 		verifySetGetCouleur(new Couleur[] { Couleur.ROUGE, Couleur.ROUGE,
 				Couleur.ROUGE, Couleur.BLEU });
-
 	}
 
 	@Test
@@ -95,7 +86,6 @@ public class MastermindTest {
 		MasterMind masterMind = verifySetGetCouleur(Couleur.ROUGE);
 		// 1 de bien placé
 		assertEquals(1, masterMind.setProposition(Couleur.ROUGE).getNbGood());
-
 	}
 
 	@Test
@@ -105,7 +95,6 @@ public class MastermindTest {
 		// 2 de bien placé
 		assertEquals(2, masterMind.setProposition(Couleur.ROUGE, Couleur.ROUGE)
 				.getNbGood());
-
 	}
 
 	@Test
@@ -115,7 +104,6 @@ public class MastermindTest {
 				Couleur.ROUGE);
 		// 2 de bien placé
 		assertEquals(1, resultat.getNbMalPace());
-
 	}
 
 	@Test
@@ -125,7 +113,6 @@ public class MastermindTest {
 		// 2 de bien placé
 		assertEquals(1, masterMind.setProposition(Couleur.ROUGE, Couleur.ROUGE)
 				.getNbGood());
-
 	}
 
 	@Test
@@ -140,11 +127,9 @@ public class MastermindTest {
 		mastermind.setSolution(solution);
 		int i = 0;
 		for (Couleur couleur : solution) {
-
 			assertEquals(couleur, mastermind.getSolution()[i]);
 			i++;
 		}
 		return mastermind;
 	}
-
 }

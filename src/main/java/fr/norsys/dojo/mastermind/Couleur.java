@@ -1,6 +1,4 @@
 package fr.norsys.dojo.mastermind;
-
-
 /**
  * @author technomaker01
  *

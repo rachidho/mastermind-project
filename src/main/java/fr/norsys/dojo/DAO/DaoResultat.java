@@ -34,7 +34,6 @@ public class DaoResultat implements IDaoResultat {
 			pstmt.close();
 			return i;
 		}
-		
 		// methode permet de modifier un utilisateur
 		public int updateResultat(ResultatEntity resultat) throws SQLException {
 			PreparedStatement pstmt = conn.prepareStatement(updateResultat);
@@ -46,7 +45,6 @@ public class DaoResultat implements IDaoResultat {
 			pstmt.close();
 			return i;
 		}
-
 		// methode permet de supprimer un utilisateur
 		public int deleteResultat(Long idResultat) throws SQLException {
 			PreparedStatement pstmt = conn.prepareStatement(deleteResultat);
@@ -55,7 +53,6 @@ public class DaoResultat implements IDaoResultat {
 			pstmt.close();
 			return i;
 		}
-		
 		// methode permet de genere le id de la tabel resultat
 		public Long iDtable() throws SQLException{
 			PreparedStatement pstmt = conn.prepareStatement(findAllResultat);
