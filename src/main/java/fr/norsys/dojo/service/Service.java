@@ -1,7 +1,6 @@
 package fr.norsys.dojo.service;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,23 +47,12 @@ public class Service extends AbstractTableModel implements IService {
 	}
 
 	// methode permet d'ajoute un utilisateur
-	public void ajoutUtilisateur(Utilisateur utilisateur) throws SQLException {
-		connexion();
-		IDaoUtilisateur iDaoUtilisateur = new DaoUtilisateur(conn);
-		iDaoUtilisateur.ajoutUtilisateur(utilisateur);
-		users.add(utilisateur);
-		fireTableRowsInserted(users.size() - 1, users.size() - 1);
-		conn.close();
-	}
-
-	// methode permet d'ajoute un utilisateur
-	public void ajoutResultat(ResultatEntity resultat) throws SQLException {
+	public int ajoutResultat(ResultatEntity resultat) throws SQLException {
 		connexion();
 		IDaoResultat iDaoResultat = new DaoResultat(conn);
-		iDaoResultat.ajoutResultat(resultat);
-		// users.add(resultat);
-		// fireTableRowsInserted(users.size() - 1, users.size() - 1);
+		int i = iDaoResultat.ajoutResultat(resultat);
 		conn.close();
+		return i;
 	}
 
 	// methode permet de modifier un utilisateur
@@ -85,6 +73,17 @@ public class Service extends AbstractTableModel implements IService {
 		return i;
 	}
 
+	// methode permet d'ajoute un utilisateur
+		public void ajoutUtilisateur(Utilisateur utilisateur) throws SQLException {
+			connexion();
+			IDaoUtilisateur iDaoUtilisateur = new DaoUtilisateur(conn);
+			iDaoUtilisateur.ajoutUtilisateur(utilisateur);
+			users.add(utilisateur);
+			fireTableRowsInserted(users.size() - 1, users.size() - 1);
+			conn.close();
+		}
+
+		
 	// methode permet de liste tout les utilisateur
 	public List<Utilisateur> findAllUtilisateurs() throws SQLException {
 		connexion();
@@ -127,19 +126,19 @@ public class Service extends AbstractTableModel implements IService {
 	}
 
 	// methode permet de genere l'ID suivant
-	// public Long iDtable(String s) throws SQLException{
-	// connexion();
-	// Long il = (long) 0;
-	// if(s.equals("Adresse")){
-	// IDaoAdresse iDaoAdresse = new DaoAdresse(conn);
-	// il = iDaoAdresse.iDtable();
-	// }else if(s.equals("Utilisateur")){
-	// IDaoUtilisateur iDaoUtilisateur = new DaoUtilisateur(conn);
-	// il = iDaoUtilisateur.iDtable();
-	// }
-	// conn.close();
-	// return il;
-	// }
+	public Long iDtable(String s) throws SQLException {
+		connexion();
+		Long il = (long) 0;
+		if (s.equals("Adresse")) {
+			IDaoResultat iDaoAdresse = new DaoResultat(conn);
+			il = iDaoAdresse.iDtable();
+		} else if (s.equals("Utilisateur")) {
+			IDaoUtilisateur iDaoUtilisateur = new DaoUtilisateur(conn);
+			il = iDaoUtilisateur.iDtable();
+		}
+		conn.close();
+		return il;
+	}
 
 	public int getRowCount() {
 		return users.size();

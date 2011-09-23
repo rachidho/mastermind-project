@@ -11,5 +11,7 @@ public interface IDaoResultat {
 	public int updateResultat(ResultatEntity resultat) throws SQLException;
 	// methode permet de supprimer un utilisateur
 	public int deleteResultat(Long idResultat) throws SQLException;
+	// methode permet de genere le id de la tabel resultat
+	public Long iDtable() throws SQLException;
 
 }

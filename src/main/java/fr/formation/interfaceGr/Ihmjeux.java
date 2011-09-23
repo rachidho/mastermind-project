@@ -49,6 +49,7 @@ public class Ihmjeux extends JFrame implements ActionListener {
 	JPanel jPanelContaint = new JPanel();
 	JPanel jPanelChemp = new JPanel();
 	JPanel jPanel = null;
+	JPanel jPanelDesPanel = null;
 	JPanel jPanelBoule = null;
 
 	public Ihmjeux() {
@@ -67,11 +68,20 @@ public class Ihmjeux extends JFrame implements ActionListener {
 		cases = new JLabel[2];
 		//jPanelChemp.add(cases);
 		/*JScrollPane js = new JScrollPane(tableau);*/
+		jPanelDesPanel = new JPanel(new GridLayout(10,6));
+		for(int i = 0 ; i < 6 ; i++){
+			JPanel panel = new JPanel();
+			jPanelDesPanel.add(panel);
+		}
+		
+		jPanelContaint.add(jPanelDesPanel);
+		
 		jPanelContaint.add(jPanelChemp, BorderLayout.CENTER);
 
 		jPanel = new JPanel();
 		jPanelBoule = new JPanel();
-
+		
+		// les button que l_utilisateur utilise
 		rejoue = new JButton("Rejoue");
 		rejoue.addActionListener(this);
 		jPanel.add(rejoue);
@@ -89,24 +99,25 @@ public class Ihmjeux extends JFrame implements ActionListener {
 		label2 = new JLabel();
 		label3 = new JLabel();
 		
+		// image vert 
 		labelVERT.addMouseListener(new MouseAdapter(){
 
 			   public void mouseClicked(MouseEvent e) {
-			     System.out.println("Click at: " + e.getPoint());
+			     System.out.println("image vert");
 			   }
 			});
-		
+		// image bleu
 		labelBLEU.addMouseListener(new MouseAdapter(){
 
 			   public void mouseClicked(MouseEvent e) {
-			     System.out.println("Click at: " + e.getPoint());
+			     System.out.println("image bleu");
 			   }
 			});
-		
+		// image rouge
 		labelROUGE.addMouseListener(new MouseAdapter(){
 
 			   public void mouseClicked(MouseEvent e) {
-			     System.out.println("Click at: " + e.getPoint());
+			     System.out.println("image rouge");
 			   }
 
 			});

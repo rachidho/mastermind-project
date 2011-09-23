@@ -11,6 +11,8 @@ import org.junit.Test;
 import fr.norsys.dojo.DAO.DaoResultat;
 import fr.norsys.dojo.DAO.interfaceDAO.IDaoResultat;
 import fr.norsys.dojo.entity.ResultatEntity;
+import fr.norsys.dojo.service.IService;
+import fr.norsys.dojo.service.Service;
 import fr.norsys.dojo.util.ConnexionBDD;
 
 public class MastermindTest {
@@ -25,6 +27,52 @@ public class MastermindTest {
 		}
 	}
 
+	// methode permet de faire le test sur l'insertion, modification et
+		// suppresion a partir de DAO
+		// test de DAO
+		@Test
+		public void shouldCRUDResultatDAO() throws SQLException {
+			connexion();
+			IDaoResultat iDaoResultat = new DaoResultat(conn);
+			ResultatEntity resultatEntity = new ResultatEntity();
+			resultatEntity.setIdResulte((long) 1);
+			resultatEntity.setIdUtilisateur((long) 1);
+			resultatEntity.setGagnees(1);
+			resultatEntity.setPerdus(3);
+
+			// ajout du resultat
+			assertTrue(1 == iDaoResultat.ajoutResultat(resultatEntity));
+			// modification
+			resultatEntity.setGagnees(1);
+			assertTrue(1 == iDaoResultat.updateResultat(resultatEntity));
+			// supression
+			assertTrue(1 == iDaoResultat.deleteResultat((long) 1));
+
+			conn.close();
+		}
+
+		// methode permet de faire le test sur l'insertion, modification et
+		// suppresion a partir de service
+		// test de SERVICE
+		@Test
+		public void shouldCRUDResultatSERVICE() throws SQLException {
+			IService iService = new Service();
+			ResultatEntity resultatEntity = new ResultatEntity();
+			resultatEntity.setIdResulte((long) 1);
+			resultatEntity.setIdUtilisateur((long) 1);
+			resultatEntity.setGagnees(1);
+			resultatEntity.setPerdus(3);
+
+			// ajout du resultat
+			assertTrue(1 == iService.ajoutResultat(resultatEntity));
+			// modification
+			resultatEntity.setGagnees(1);
+			assertTrue(1 == iService.updateResultat(resultatEntity));
+			// supression
+			assertTrue(1 == iService.deleteResultat((long) 1));
+
+		}
+		
 	@Test
 	public void shouldAvoirSolution() {
 		verifySetGetCouleur(new Couleur[] { Couleur.ROUGE, Couleur.ROUGE,
@@ -85,28 +133,6 @@ public class MastermindTest {
 		MasterMind masterMind = verifySetGetCouleur(Couleur.BLEU);
 		// 0 de bien placé
 		assertEquals(0, masterMind.setProposition(Couleur.ROUGE).getNbGood());
-	}
-
-	// methode permet de faire le test sur l'insertion, modification et suppresion
-	@Test
-	public void shouldCRUDResultat() throws SQLException {
-		connexion();
-		IDaoResultat iDaoResultat = new DaoResultat(conn);
-		ResultatEntity resultatEntity = new ResultatEntity();
-		resultatEntity.setIdResulte((long) 1);
-		resultatEntity.setIdUtilisateur((long) 1);
-		resultatEntity.setGagnees(1);
-		resultatEntity.setPerdus(3);
-		
-		// ajout du resultat
-		assertTrue(1 == iDaoResultat.ajoutResultat(resultatEntity));
-		// modification
-		resultatEntity.setGagnees(1);
-		assertTrue(1 == iDaoResultat.updateResultat(resultatEntity));
-		// supression
-		assertTrue(1 == iDaoResultat.deleteResultat((long) 1));
-		
-		conn.close();
 	}
 
 	private MasterMind verifySetGetCouleur(Couleur... solution) {

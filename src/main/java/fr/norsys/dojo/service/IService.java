@@ -10,18 +10,17 @@ import fr.norsys.dojo.entity.Utilisateur;
 
 public interface IService {
 
-	public void ajoutResultat(ResultatEntity resultat) throws SQLException;
-
-	// methode permet de modifier un utilisateur
+	// methode permet d'ajoute un resultet
+	public int ajoutResultat(ResultatEntity resultat) throws SQLException;
+	// methode permet de modifier un resultat
 	public int updateResultat(ResultatEntity resultat) throws SQLException;
-
-	// methode permet de supprimer un utilisateur
+	// methode permet de supprimer un resultat
 	public int deleteResultat(Long idResultat) throws SQLException;
-	//
+	// methode permet l'ajout d'un utilisateur
 	public void ajoutUtilisateur(Utilisateur utilisateur) throws SQLException;
-
+	// methode permet de supprimer un resultat
 	public void addUtilisateur(Utilisateur utilisateur);
-
+	// methode permet de supprimer un utilisateur
 	public void removeUtilisateur(int rowIndex);
 
 	public int getRowCount();

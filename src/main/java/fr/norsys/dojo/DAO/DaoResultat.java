@@ -2,6 +2,7 @@ package fr.norsys.dojo.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import fr.norsys.dojo.DAO.interfaceDAO.IDaoResultat;
@@ -17,6 +18,7 @@ public class DaoResultat implements IDaoResultat {
 	private String createResultat = "insert into RESULTATENTITY ( IDRESULTE, IDUTILISATEUR, GAGNEES, PERDUS ) values (?, ?, ?, ?)";
 	private String updateResultat = "UPDATE RESULTATENTITY SET GAGNEES = ?, PERDUS = ? where IDRESULTE = ? and IDUTILISATEUR = ?";
 	private String deleteResultat = "DELETE FROM RESULTATENTITY WHERE IDRESULTE = ?";
+	private String findAllResultat = "select * from RESULTATENTITY";
 	
 	public DaoResultat(Connection conn) {
 		this.conn = conn;
@@ -52,6 +54,17 @@ public class DaoResultat implements IDaoResultat {
 			int i = pstmt.executeUpdate();
 			pstmt.close();
 			return i;
+		}
+		
+		// methode permet de genere le id de la tabel resultat
+		public Long iDtable() throws SQLException{
+			PreparedStatement pstmt = conn.prepareStatement(findAllResultat);
+			ResultSet rs = pstmt.executeQuery();
+			Long il = (long) 0;
+			while (rs.next()){
+				il = rs.getLong(1);
+			}
+			return il+1;
 		}
 
 }

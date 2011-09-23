@@ -1,14 +1,22 @@
 package fr.norsys.dojo.entity;
 
+import fr.norsys.dojo.annotation.ClePrimaire;
+import fr.norsys.dojo.annotation.NomTable;
+
 /**
  * @author technomaker01
  *
  */
+@NomTable( name = "ResultatEntity")
 public class ResultatEntity {
 	
+	@ClePrimaire( name ="idResulte")
 	private Long idResulte;
+	@ClePrimaire( name ="idUtilisateur")
 	private Long idUtilisateur;
+	@ClePrimaire( name ="gagnees")
 	private int gagnees;
+	@ClePrimaire( name ="perdus")
 	private int perdus;
 	
 	
