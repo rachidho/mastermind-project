@@ -119,8 +119,8 @@ public class Service extends AbstractTableModel implements IService {
 		connexion();
 		Long il = (long) 0;
 		if (s.equals("Resultat")) {
-			IDaoResultat iDaoAdresse = new DaoResultat(conn);
-			il = iDaoAdresse.iDtable();
+			IDaoResultat iDaoResultat = new DaoResultat(conn);
+			il = iDaoResultat.iDtable();
 		} else if (s.equals("Utilisateur")) {
 			IDaoUtilisateur iDaoUtilisateur = new DaoUtilisateur(conn);
 			il = iDaoUtilisateur.iDtable();

@@ -3,6 +3,7 @@ package fr.norsys.dojo.mastermind;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -97,6 +98,8 @@ public class MastermindTest {
 		assertNotNull(iService.getValueAt(0, 0));
 		assertNotNull(iService.getValueAt(0, 1));
 		assertNotNull(iService.getValueAt(0, 2));
+		assertNull(iService.getValueAt(0, 3));
+		assertNotNull(iService.getColumnName(0));
 		// supression
 		assertTrue(1 == iService.deleteUtilisateur((long) 1));
 	}

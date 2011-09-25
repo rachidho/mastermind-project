@@ -30,6 +30,7 @@ public interface IService {
 	public int updateUtilisateur(Utilisateur utilisateur) throws SQLException;
 	// suppression d'un utilisateur
 	public int deleteUtilisateur(Long idUtilisateur) throws SQLException;
+	public String getColumnName(int columnIndex);
 	public Object getValueAt(int i, int j);
 	public Long iDtable(String s) throws SQLException;
 }
