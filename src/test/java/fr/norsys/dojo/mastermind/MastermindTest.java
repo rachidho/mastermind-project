@@ -94,6 +94,9 @@ public class MastermindTest {
 		assertNotNull(iService.iDtable("Resultat"));
 		// generated ID utilisateur
 		assertNotNull(iService.iDtable("Utilisateur"));
+		assertNotNull(iService.getValueAt(0, 0));
+		assertNotNull(iService.getValueAt(0, 1));
+		assertNotNull(iService.getValueAt(0, 2));
 		// supression
 		assertTrue(1 == iService.deleteUtilisateur((long) 1));
 	}

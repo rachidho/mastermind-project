@@ -21,7 +21,7 @@ public interface IService {
 	public void addUtilisateur(Utilisateur utilisateur);
 	// methode permet de supprimer un utilisateur
 	public void removeUtilisateur(int rowIndex);
-	public int getRowCount();
+	//public int getRowCount();
 	// liste de  tous les utilisateur
 	public List<Utilisateur> findAllUtilisateurs() throws SQLException;
 	// recuper un utilisateur par son id

@@ -19,13 +19,6 @@ public class Utilisateur {
 	// constructeur vide
 	public Utilisateur() {
 	}
-	// constructeur initialisé
-	public Utilisateur(Long inUtilisateur, String nomUtilisateur,
-			String preUtilisateur) {
-		this.inUtilisateur = inUtilisateur;
-		this.nomUtilisateur = nomUtilisateur;
-		this.preUtilisateur = preUtilisateur;
-	}
 	// les getters et les setters
 	public Long getInUtilisateur() {
 		return inUtilisateur;
