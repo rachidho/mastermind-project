@@ -66,13 +66,14 @@ public class Service extends AbstractTableModel implements IService {
 		return i;
 	}
 	// methode permet d'ajoute un utilisateur
-		public void ajoutUtilisateur(Utilisateur utilisateur) throws SQLException {
+		public int ajoutUtilisateur(Utilisateur utilisateur) throws SQLException {
 			connexion();
 			IDaoUtilisateur iDaoUtilisateur = new DaoUtilisateur(conn);
-			iDaoUtilisateur.ajoutUtilisateur(utilisateur);
+			int i = iDaoUtilisateur.ajoutUtilisateur(utilisateur);
 			users.add(utilisateur);
 			fireTableRowsInserted(users.size() - 1, users.size() - 1);
 			conn.close();
+			return i;
 		}
 	// methode permet de liste tout les utilisateur
 	public List<Utilisateur> findAllUtilisateurs() throws SQLException {
@@ -98,18 +99,20 @@ public class Service extends AbstractTableModel implements IService {
 		return utilisateur;
 	}
 	// methode permet de modifier un utilisateur
-	public void updateUtilisateur(Utilisateur utilisateur) throws SQLException {
+	public int updateUtilisateur(Utilisateur utilisateur) throws SQLException {
 		connexion();
 		IDaoUtilisateur iDaoUtilisateur = new DaoUtilisateur(conn);
-		iDaoUtilisateur.updateUtilisateur(utilisateur);
+		int i = iDaoUtilisateur.updateUtilisateur(utilisateur);
 		conn.close();
+		return i;
 	}
 	// methode permet de supprimer un utilisateur
-	public void deleteUtilisateur(Long idUtilisateur) throws SQLException {
+	public int deleteUtilisateur(Long idUtilisateur) throws SQLException {
 		connexion();
 		IDaoUtilisateur iDaoUtilisateur = new DaoUtilisateur(conn);
-		iDaoUtilisateur.deleteUtilisateur(idUtilisateur);
+		int i = iDaoUtilisateur.deleteUtilisateur(idUtilisateur);
 		conn.close();
+		return i;
 	}
 	// methode permet de genere l'ID suivant
 	public Long iDtable(String s) throws SQLException {

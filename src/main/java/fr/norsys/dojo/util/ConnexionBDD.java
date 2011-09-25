@@ -20,7 +20,8 @@ public class ConnexionBDD {
 		}  
 		if(dataSource == null){
 			dataSource = new JDBCDataSource();
-			dataSource.setUrl("jdbc:hsqldb:file:D:\\outils_de_travail\\springsource\\workspace-sts\\mastermind-project\\data\\data");
+			//dataSource.setUrl("jdbc:hsqldb:file:D:\\outils_de_travail\\springsource\\workspace-sts\\mastermind-project\\data\\data");
+			dataSource.setUrl("jdbc:hsqldb:file:F:\\formation_maker\\springsource\\workspace-sts\\mastermind-project\\data\\data");
 			dataSource.setUser("SA");
 			dataSource.setPassword("");
 		}

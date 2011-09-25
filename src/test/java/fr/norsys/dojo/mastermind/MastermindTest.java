@@ -2,6 +2,7 @@ package fr.norsys.dojo.mastermind;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNotNull;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -11,6 +12,7 @@ import org.junit.Test;
 import fr.norsys.dojo.DAO.DaoResultat;
 import fr.norsys.dojo.DAO.interfaceDAO.IDaoResultat;
 import fr.norsys.dojo.entity.ResultatEntity;
+import fr.norsys.dojo.entity.Utilisateur;
 import fr.norsys.dojo.service.IService;
 import fr.norsys.dojo.service.Service;
 import fr.norsys.dojo.util.ConnexionBDD;
@@ -65,6 +67,27 @@ public class MastermindTest {
 		// supression
 		assertTrue(1 == iService.deleteResultat((long) 1));
 	}
+	
+	// methode permet de faire le test sur l'insertion, modification et
+		// suppresion d'un utilisateur a partir de service
+		// test de SERVICE
+		@Test
+		public void shouldCRUDUtilisateurSERVICE() throws SQLException {
+			IService iService = new Service();
+			Utilisateur utilisateur = new Utilisateur();
+			utilisateur.setInUtilisateur((long) 1);
+			utilisateur.setNomUtilisateur("nomUtilisateur");
+			utilisateur.setPreUtilisateur("preUtilisateur");
+			// ajout du resultat
+			assertTrue(1 == iService.ajoutUtilisateur(utilisateur));
+			// modification
+			utilisateur.setNomUtilisateur("test");
+			assertTrue(1 == iService.updateUtilisateur(utilisateur));
+			// recherche by id
+			assertNotNull(" existe ",iService.utilisateurById((long) 1));
+			// supression
+			assertTrue(1 == iService.deleteUtilisateur((long) 1));
+		}
 	
 	@Test
 	public void shouldAvoirSolution() {

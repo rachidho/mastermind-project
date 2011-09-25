@@ -16,7 +16,7 @@ public interface IService {
 	// methode permet de supprimer un resultat
 	public int deleteResultat(Long idResultat) throws SQLException;
 	// methode permet l'ajout d'un utilisateur
-	public void ajoutUtilisateur(Utilisateur utilisateur) throws SQLException;
+	public int ajoutUtilisateur(Utilisateur utilisateur) throws SQLException;
 	// methode permet de supprimer un resultat
 	public void addUtilisateur(Utilisateur utilisateur);
 	// methode permet de supprimer un utilisateur
@@ -27,9 +27,9 @@ public interface IService {
 	// recuper un utilisateur par son id
 	public Utilisateur utilisateurById(Long idUtilisateur) throws SQLException;
 	// modification d'un utilisateur
-	public void updateUtilisateur(Utilisateur utilisateur) throws SQLException;
+	public int updateUtilisateur(Utilisateur utilisateur) throws SQLException;
 	// suppression d'un utilisateur
-	public void deleteUtilisateur(Long idUtilisateur) throws SQLException;
+	public int deleteUtilisateur(Long idUtilisateur) throws SQLException;
 	public Object getValueAt(int i, int j);
 	// public Long iDtable(String s) throws SQLException;
 }

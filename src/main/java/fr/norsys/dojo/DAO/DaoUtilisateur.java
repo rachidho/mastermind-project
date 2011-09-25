@@ -24,13 +24,14 @@ public class DaoUtilisateur implements IDaoUtilisateur {
 		this.conn = conn;
 	}
 	// methode permt d'ajoute un utilisateur
-	public void ajoutUtilisateur(Utilisateur utilisateur) throws SQLException {
+	public int ajoutUtilisateur(Utilisateur utilisateur) throws SQLException {
 		PreparedStatement pstmt = conn.prepareStatement(createUtilisateur);
 		pstmt.setLong(1, utilisateur.getInUtilisateur());
 		pstmt.setString(2, utilisateur.getNomUtilisateur());
 		pstmt.setString(3, utilisateur.getPreUtilisateur());
-		pstmt.executeUpdate();
+		int i = pstmt.executeUpdate();
 		pstmt.close();
+		return i;
 	}
 	// methode permet de list tous les utilisateurs
 	public List<Utilisateur> findAllUtilisateurs() throws SQLException {
@@ -74,20 +75,22 @@ public class DaoUtilisateur implements IDaoUtilisateur {
 		return newUtilisateur;
 	}
 	// methode permet de modifier un utilisateur
-	public void updateUtilisateur(Utilisateur utilisateur) throws SQLException {
+	public int updateUtilisateur(Utilisateur utilisateur) throws SQLException {
 		PreparedStatement pstmt = conn.prepareStatement(updateUtilisateur);
 		pstmt.setString(1, utilisateur.getNomUtilisateur());
 		pstmt.setString(2, utilisateur.getPreUtilisateur());
 		pstmt.setLong(3, utilisateur.getInUtilisateur());
-		pstmt.executeUpdate();
+		int i = pstmt.executeUpdate();
 		pstmt.close();
+		return i;
 	}
 	// methode permet de supprimer un utilisateur
-	public void deleteUtilisateur(Long idUtilisateur) throws SQLException {
+	public int deleteUtilisateur(Long idUtilisateur) throws SQLException {
 		PreparedStatement pstmt = conn.prepareStatement(deleteUtilisateur);
 		pstmt.setLong(1, idUtilisateur);
-		pstmt.executeUpdate();
+		int i = pstmt.executeUpdate();
 		pstmt.close();
+		return i;
 	}
 	public Long iDtable() throws SQLException{
 		PreparedStatement pstmt = conn.prepareStatement(findAllUtilisateurs);
