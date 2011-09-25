@@ -118,7 +118,7 @@ public class Service extends AbstractTableModel implements IService {
 	public Long iDtable(String s) throws SQLException {
 		connexion();
 		Long il = (long) 0;
-		if (s.equals("Adresse")) {
+		if (s.equals("Resultat")) {
 			IDaoResultat iDaoAdresse = new DaoResultat(conn);
 			il = iDaoAdresse.iDtable();
 		} else if (s.equals("Utilisateur")) {

@@ -19,6 +19,7 @@ import fr.norsys.dojo.util.ConnexionBDD;
 
 public class MastermindTest {
 	Connection conn = null;
+
 	// methode permet de faire la connexion a la base de donnee
 	private void connexion() {
 		try {
@@ -27,6 +28,7 @@ public class MastermindTest {
 			e.printStackTrace();
 		}
 	}
+
 	// methode permet de faire le test sur l'insertion, modification et
 	// suppresion a partir de DAO
 	// test de DAO
@@ -48,6 +50,7 @@ public class MastermindTest {
 		assertTrue(1 == iDaoResultat.deleteResultat((long) 1));
 		conn.close();
 	}
+
 	// methode permet de faire le test sur l'insertion, modification et
 	// suppresion a partir de service
 	// test de SERVICE
@@ -67,28 +70,36 @@ public class MastermindTest {
 		// supression
 		assertTrue(1 == iService.deleteResultat((long) 1));
 	}
-	
+
 	// methode permet de faire le test sur l'insertion, modification et
-		// suppresion d'un utilisateur a partir de service
-		// test de SERVICE
-		@Test
-		public void shouldCRUDUtilisateurSERVICE() throws SQLException {
-			IService iService = new Service();
-			Utilisateur utilisateur = new Utilisateur();
-			utilisateur.setInUtilisateur((long) 1);
-			utilisateur.setNomUtilisateur("nomUtilisateur");
-			utilisateur.setPreUtilisateur("preUtilisateur");
-			// ajout du resultat
-			assertTrue(1 == iService.ajoutUtilisateur(utilisateur));
-			// modification
-			utilisateur.setNomUtilisateur("test");
-			assertTrue(1 == iService.updateUtilisateur(utilisateur));
-			// recherche by id
-			assertNotNull(" existe ",iService.utilisateurById((long) 1));
-			// supression
-			assertTrue(1 == iService.deleteUtilisateur((long) 1));
-		}
+	// suppresion d'un utilisateur a partir de service
+	// test de SERVICE
+	@Test
+	public void shouldCRUDUtilisateurSERVICE() throws SQLException {
+		IService iService = new Service();
+		Utilisateur utilisateur = new Utilisateur();
+		utilisateur.setInUtilisateur((long) 1);
+		utilisateur.setNomUtilisateur("nomUtilisateur");
+		utilisateur.setPreUtilisateur("preUtilisateur");
+		// ajout du resultat
+		assertTrue(1 == iService.ajoutUtilisateur(utilisateur));
+		// modification
+		utilisateur.setNomUtilisateur("test");
+		assertTrue(1 == iService.updateUtilisateur(utilisateur));
+		// recherche by id
+		assertNotNull(iService.utilisateurById((long) 1));
+		// recherche All Utilisateur
+		assertNotNull(iService.findAllUtilisateurs());
+		// generated ID resulta
+		assertNotNull(iService.iDtable("Resultat"));
+		// generated ID utilisateur
+		assertNotNull(iService.iDtable("Utilisateur"));
+		// supression
+		assertTrue(1 == iService.deleteUtilisateur((long) 1));
+	}
 	
+	
+
 	@Test
 	public void shouldAvoirSolution() {
 		verifySetGetCouleur(new Couleur[] { Couleur.ROUGE, Couleur.ROUGE,
