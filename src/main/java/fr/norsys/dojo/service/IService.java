@@ -31,6 +31,7 @@ public interface IService {
 	// suppression d'un utilisateur
 	public int deleteUtilisateur(Long idUtilisateur) throws SQLException;
 	public int getRowCount();
+	public int getColumnCount();
 	public String getColumnName(int columnIndex);
 	public Object getValueAt(int i, int j);
 	public Long iDtable(String s) throws SQLException;

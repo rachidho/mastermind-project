@@ -1,9 +1,9 @@
 package fr.norsys.dojo.mastermind;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -11,7 +11,9 @@ import java.sql.SQLException;
 import org.junit.Test;
 
 import fr.norsys.dojo.DAO.DaoResultat;
+import fr.norsys.dojo.DAO.DaoUtilisateur;
 import fr.norsys.dojo.DAO.interfaceDAO.IDaoResultat;
+import fr.norsys.dojo.DAO.interfaceDAO.IDaoUtilisateur;
 import fr.norsys.dojo.entity.ResultatEntity;
 import fr.norsys.dojo.entity.Utilisateur;
 import fr.norsys.dojo.service.IService;
@@ -47,6 +49,8 @@ public class MastermindTest {
 		// modification
 		resultatEntity.setGagnees(1);
 		assertTrue(1 == iDaoResultat.updateResultat(resultatEntity));
+		// generated ID utilisateur
+		assertNotNull(iDaoResultat.iDtable());
 		// supression
 		assertTrue(1 == iDaoResultat.deleteResultat((long) 1));
 		conn.close();
@@ -106,17 +110,46 @@ public class MastermindTest {
 		assertNull(iService.getValueAt(0, 3));
 		// nom de premier colonne
 		assertNotNull(iService.getColumnName(0));
+		// nombre colonne de la table
+		assertEquals(3, iService.getColumnCount());
 		// ajouter d'un objet a la collection
 		iService.addUtilisateur(utilisateur1);
-		// nembre d'objet dans la collestion 1 dans la base de donne et 2eme une anstance
-		assertEquals( 2 ,iService.getRowCount());
+		// nembre d'objet dans la collestion 1 dans la base de donne et 2eme une
+		// anstance
+		assertEquals(2, iService.getRowCount());
 		// suppresion de 2eme objet inser dans la collection
 		iService.removeUtilisateur(1);
-		assertEquals(1 ,iService.getRowCount());
+		assertEquals(1, iService.getRowCount());
 		// supression
 		assertTrue(1 == iService.deleteUtilisateur((long) 1));
 	}
-	
+
+	// methode permet de faire le test sur l'insertion, modification et
+	// suppresion d'un utilisateur a partir de DAO
+	// test de DAO
+	@Test
+	public void shouldCRUDUtilisateurDAO() throws SQLException {
+		connexion();
+		IDaoUtilisateur iDaoUtilisateur = new DaoUtilisateur(conn);
+		Utilisateur utilisateur = new Utilisateur();
+		utilisateur.setInUtilisateur((long) 1);
+		utilisateur.setNomUtilisateur("nomUtilisateur1");
+		utilisateur.setPreUtilisateur("preUtilisateur1");
+		// ajout du utilisateurs
+		assertTrue(1 == iDaoUtilisateur.ajoutUtilisateur(utilisateur));
+		// modification
+		utilisateur.setNomUtilisateur("test");
+		assertTrue(1 == iDaoUtilisateur.updateUtilisateur(utilisateur));
+		// recherche by id
+		assertNotNull(iDaoUtilisateur.utilisateurById((long) 1));
+		// recherche All Utilisateur
+		assertNotNull(iDaoUtilisateur.findAllUtilisateurs());
+		// generated ID utilisateur
+		assertNotNull(iDaoUtilisateur.iDtable());
+		// supression
+		assertTrue(1 == iDaoUtilisateur.deleteUtilisateur((long) 1));
+		conn.close();
+	}
 
 	@Test
 	public void shouldAvoirSolution() {

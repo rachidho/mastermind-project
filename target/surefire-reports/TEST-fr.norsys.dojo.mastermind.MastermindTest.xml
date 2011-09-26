@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="1" time="1.484" errors="0" skipped="0" tests="10" name="fr.norsys.dojo.mastermind.MastermindTest">
+<testsuite failures="0" time="1.185" errors="1" skipped="0" tests="11" name="fr.norsys.dojo.mastermind.MastermindTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_27\jre\bin"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="F:\formation_maker\springsource\workspace-sts\mastermind-project"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_27\jre\lib\endorsed"/>
     <property name="os.arch" value="x86"/>
-    <property name="surefire.real.class.path" value="F:\formation_maker\springsource\workspace-sts\mastermind-project\target\surefire\surefirebooter3822160986675119042.jar"/>
+    <property name="surefire.real.class.path" value="F:\formation_maker\springsource\workspace-sts\mastermind-project\target\surefire\surefirebooter3991337043098506442.jar"/>
     <property name="java.io.tmpdir" value="C:\Users\rachid\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
@@ -43,7 +43,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="32"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.6.0_27\jre"/>
-    <property name="sun.java.command" value="F:\formation_maker\springsource\workspace-sts\mastermind-project\target\surefire\surefirebooter3822160986675119042.jar F:\formation_maker\springsource\workspace-sts\mastermind-project\target\surefire\surefire5603460747610350306tmp F:\formation_maker\springsource\workspace-sts\mastermind-project\target\surefire\surefire2409607997503088428tmp"/>
+    <property name="sun.java.command" value="F:\formation_maker\springsource\workspace-sts\mastermind-project\target\surefire\surefirebooter3991337043098506442.jar F:\formation_maker\springsource\workspace-sts\mastermind-project\target\surefire\surefire4418480645597687265tmp F:\formation_maker\springsource\workspace-sts\mastermind-project\target\surefire\surefire8974299523997885463tmp"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="fr"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -60,14 +60,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="1.17" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldCRUDResultatDAO"/>
-  <testcase time="0.025" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldCRUDResultatSERVICE"/>
-  <testcase time="0.037" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldCRUDUtilisateurSERVICE">
-    <failure message="" type="java.lang.AssertionError">java.lang.AssertionError: 
-	at org.junit.Assert.fail(Assert.java:91)
-	at org.junit.Assert.assertTrue(Assert.java:43)
-	at org.junit.Assert.assertTrue(Assert.java:54)
-	at fr.norsys.dojo.mastermind.MastermindTest.shouldCRUDUtilisateurSERVICE(MastermindTest.java:89)
+  <testcase time="1.03" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldCRUDResultatDAO"/>
+  <testcase time="0.015" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldCRUDResultatSERVICE"/>
+  <testcase time="0.032" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldCRUDUtilisateurSERVICE"/>
+  <testcase time="0" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldCRUDUtilisateurDAO">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at fr.norsys.dojo.DAO.DaoUtilisateur.ajoutUtilisateur(DaoUtilisateur.java:28)
+	at fr.norsys.dojo.mastermind.MastermindTest.shouldCRUDUtilisateurDAO(MastermindTest.java:138)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -96,13 +95,13 @@
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:150)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcess(SurefireStarter.java:91)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:69)
-</failure>
+</error>
   </testcase>
-  <testcase time="0.001" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldAvoirSolution"/>
+  <testcase time="0" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldAvoirSolution"/>
   <testcase time="0" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldSaveSolution"/>
-  <testcase time="0.002" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldVerifyOneGood"/>
-  <testcase time="0.001" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldVerifyTwoGood"/>
+  <testcase time="0.015" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldVerifyOneGood"/>
+  <testcase time="0" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldVerifyTwoGood"/>
   <testcase time="0" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldVerifyOneFalsePosition"/>
-  <testcase time="0.001" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldAcceptDifferentSize"/>
+  <testcase time="0" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldAcceptDifferentSize"/>
   <testcase time="0" classname="fr.norsys.dojo.mastermind.MastermindTest" name="shouldVerifyZeroGood"/>
 </testsuite>
