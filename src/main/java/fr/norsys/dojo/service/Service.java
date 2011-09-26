@@ -136,7 +136,6 @@ public class Service extends AbstractTableModel implements IService {
 		return entetes.length;
 	}
 
-	@Override
 	public String getColumnName(int columnIndex) {
 		return entetes[columnIndex];
 	}

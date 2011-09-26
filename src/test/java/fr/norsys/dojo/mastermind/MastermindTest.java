@@ -82,6 +82,10 @@ public class MastermindTest {
 		utilisateur.setInUtilisateur((long) 1);
 		utilisateur.setNomUtilisateur("nomUtilisateur");
 		utilisateur.setPreUtilisateur("preUtilisateur");
+		Utilisateur utilisateur1 = new Utilisateur();
+		utilisateur1.setInUtilisateur((long) 2);
+		utilisateur1.setNomUtilisateur("nomUtilisateur");
+		utilisateur1.setPreUtilisateur("preUtilisateur");
 		// ajout du resultat
 		assertTrue(1 == iService.ajoutUtilisateur(utilisateur));
 		// modification
@@ -100,10 +104,16 @@ public class MastermindTest {
 		assertNotNull(iService.getValueAt(0, 2));
 		assertNull(iService.getValueAt(0, 3));
 		assertNotNull(iService.getColumnName(0));
+		// ajouter d'un objet a la collection
+		iService.addUtilisateur(utilisateur1);
+		// nembre d'objet dans la collestion 1 dans la base de donne et 2eme une anstance
+		assertEquals( 2 ,iService.getRowCount());
+		// suppresion de 2eme objet inser dans la collection
+		iService.removeUtilisateur(1);
+		assertEquals(1 ,iService.getRowCount());
 		// supression
 		assertTrue(1 == iService.deleteUtilisateur((long) 1));
 	}
-	
 	
 
 	@Test
