@@ -82,10 +82,12 @@ public class MastermindTest {
 	@Test
 	public void shouldCRUDUtilisateurSERVICE() throws SQLException {
 		IService iService = new Service();
+		// creation de l'objet 1
 		Utilisateur utilisateur = new Utilisateur();
 		utilisateur.setInUtilisateur((long) 1);
 		utilisateur.setNomUtilisateur("nomUtilisateur");
 		utilisateur.setPreUtilisateur("preUtilisateur");
+		// creation de l'objet 2
 		Utilisateur utilisateur1 = new Utilisateur();
 		utilisateur1.setInUtilisateur((long) 2);
 		utilisateur1.setNomUtilisateur("nomUtilisateur");
@@ -131,6 +133,7 @@ public class MastermindTest {
 	public void shouldCRUDUtilisateurDAO() throws SQLException {
 		connexion();
 		IDaoUtilisateur iDaoUtilisateur = new DaoUtilisateur(conn);
+		// creation de l'objet
 		Utilisateur utilisateur = new Utilisateur();
 		utilisateur.setInUtilisateur((long) 1);
 		utilisateur.setNomUtilisateur("nomUtilisateur1");
