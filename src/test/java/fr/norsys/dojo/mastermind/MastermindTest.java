@@ -99,10 +99,12 @@ public class MastermindTest {
 		assertNotNull(iService.iDtable("Resultat"));
 		// generated ID utilisateur
 		assertNotNull(iService.iDtable("Utilisateur"));
+		// le valeur de chaque chemp de jtble
 		assertNotNull(iService.getValueAt(0, 0));
 		assertNotNull(iService.getValueAt(0, 1));
 		assertNotNull(iService.getValueAt(0, 2));
 		assertNull(iService.getValueAt(0, 3));
+		// nom de premier colonne
 		assertNotNull(iService.getColumnName(0));
 		// ajouter d'un objet a la collection
 		iService.addUtilisateur(utilisateur1);
